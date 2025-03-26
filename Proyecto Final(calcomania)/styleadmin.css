@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto; /* Cambié 100vh a auto */
+    background-image: url('Resourse/BG LOGIN.png');
+    background-size: cover;
+    background-position: top;
+    overflow: flex;
+    padding: 20px 0;
+}
+
+.admin-caja {
+    margin-top: auto; /* Ajuste con un valor fijo */
+    width: 100%;
+    max-width: 700px;
+    min-width: 320px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #ffffff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.campo-entrada {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #fff;
+    display: flex;
+    align-items: center;
+}
+
+.campo-entrada label {
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.campo-entrada input:focus ~ label,
+.campo-entrada input.has-content ~ label {
+    top: -10px;
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+.campo-entrada input {
+    width: calc(100% - 50px);
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.5em;
+    color: #fff;
+    padding: 0 45px 0 28px;
+}
+
+.campo-entrada input:focus {
+    color: #ffffff;
+}
+
+.campo-entrada .icono {
+    position: absolute;
+    left: -5px;
+    top: 55%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 2rem;
+}
+
+button {
+    width: 100%;
+    height: 55px;
+    background-color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+button:hover {
+    transition: 0.5s;
+    background-color: #c329c1;
+    color: #ffffff;
+}
+
+.lista-productos {
+    margin-top: 20px;
+    width: 80%;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 30px;
+    border-color: #ffffff;
+    box-sizing: border-box;
+    border: 2px solid #ffffff;
+}
+
+.lista-productos h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.lista-productos table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    overflow-x: auto;
+}
+
+.lista-productos th,
+.lista-productos td {
+    padding: 12px;
+    border-bottom: 1px solid #ffffff;
+    font-size: 16px;
+    text-align: center;
+    display: auto;
+}
+
+.lista-productos th {
+    background: #c329c1;
+    color: #ffffff;
+}
+
+.lista-productos tr:hover {
+    background: #dddddd75;
+}
+
+.lista-productos td img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+#imagen-producto {
+    width: 100%;
+    height: 60px;
+    font-size: 1.5rem;
+    color: transparent;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 32px;
+    cursor: pointer;
+    transition: none;
+}
+
+#imagen-producto:valid {
+    transition: 0.5s;
+    color: #fff;
+    height: 40px;
+}
+
+#imagen-producto::file-selector-button {
+    display: none;
+}
+
+
+@media (max-width: 1610px) {
+    section {
+        padding: 0;
+        margin: 0;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.7);
+        position: relative;
+        width: 100%;
+    }
+
+    .contenido-backdrop {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+    }
+
+    .admin-caja, .lista-productos {
+        width: 100%;
+        max-width: 1080px;
+        padding: 0px;
+        margin: 0; /* Elimina cualquier margen entre los elementos */
+        border: none;
+        border-radius: 0;
+    }
+
+    .admin-caja {
+        display: flex;
+        padding: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: none; /* Elimina cualquier margen inferior innecesario */
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-top: 20px; /* Ajusta el margen superior */
+        margin-bottom: 30px; /* Ajusta el margen inferior */
+    }
+
+    .campo-entrada input {
+        width: calc(100% - 50px);
+        height: 55px;
+        font-size: 1.3rem;
+    }
+
+    .campo-entrada label {
+        font-size: 1.3rem;
+    }
+
+    button {
+        height: 55px;
+        font-size: 1.3rem;
+        padding: 0 20px;
+    }
+
+    .lista-productos h2 {
+        margin-top: 20px; /* Elimina margen superior */
+        font-size: 2rem;
+    }
+
+    .lista-productos td, .lista-productos th {
+        font-size: 1rem;
+    }
+
+    .lista-productos {
+        width: 100%;
+        padding-top: 20px; /* Elimina el padding superior */
+        overflow-x: scroll;
+    }
+
+    .lista-productos table {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .campo-entrada .icono {
+        font-size: 1.5rem;
+    }
+
+    #imagen-producto {
+        width: 100%;
+        height: 40px;
+    }
+}

@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; 
+    background-image: url('Resourse/BG LOGIN.png');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    overflow: hidden; 
+    margin: 0;
+    padding: 0;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 40%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #fff;
+    border-radius: 30px;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+h2 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+    display: flex;
+    align-items: center;
+}
+
+.input-box input {
+    width: 100%;
+    height: 70px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.3s ease;
+    padding: 0 10px;
+}
+
+.input-box input:focus ~ label,
+.input-box input.has-content ~ label {
+    top: -5px;
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+.icon {
+    position: absolute;
+    left: 5px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.input-box input {
+    padding-left: 40px;
+}
+
+.input-box label {
+    left: 40px;
+}
+
+button {
+    grid-column: span 1;
+    width: 100%;
+    height: 55px;
+    background-color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+button:hover {
+    transition: 0.9s;
+    background-color: #c329c1;
+    color: #ffffff;
+}
+
+.register-link {
+    text-align: center;
+    font-size: 1.2em;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.register-link a:hover {
+    color: #c329c1;
+}
+
+.input-box input[type="date"] {
+    width: 100%;
+    height: 70px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.3em;
+    color: transparent;
+    padding-left: 40px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.input-box input[type="date"]::placeholder {
+    color: transparent;
+}
+
+.input-box input[type="date"]:valid {
+    color: #fff;
+}
+
+.input-box input[type="date"]:focus {
+    color: #fff;
+}
+
+.input-box input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+.input-box .password-toggle {
+    position: absolute;
+    right: 15px; 
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fff;
+    font-size: 2rem; 
+    display: none;
+}
+
+#nueva-contraseña-eye, #nueva-contraseña-eye-off,
+#confirmar-contraseña-eye, #confirmar-contraseña-eye-off {
+    position: relative;
+    right: 15px; 
+    top: 60%;
+    transform: translateY(-50%);
+    font-size: 1.3rem; 
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 1610px) { 
+    .login-box {
+        max-width: 1080px;
+        height: auto;
+        border: none;
+        border-radius: 0;
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    button {
+        height: 55px;
+        font-size: 1.3rem;
+    }
+
+    .register-link {
+        font-size: 1.1rem;
+    }
+}

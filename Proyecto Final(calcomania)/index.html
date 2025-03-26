@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcoMania</title>
+    <link rel="icon" href="Resourse/icono.png">
+    <link rel="stylesheet" href="stylemain.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navegador">
+        <header class="header">
+            <button class="abrir-menu" id="abrir-menu">
+                <i class="bi bi-list"></i>
+            </button>
+        </header>
+        <aside> 
+            <div class="img-logo">
+                <img src="Resourse/icono.png" alt="Logo CalcoMania" class="imagen-aside">
+            </div>
+            <button class="close-menu" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button>
+                    </li>
+                    <li>
+                        <button id="categoria1" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Calcomanias</button>
+                    </li>
+                    <li>
+                        <button id="categoria2" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Packs</button>
+                    </li>
+
+                    <li>
+                        <a class="boton-menu boton-carrito" href="./carrito.html">
+                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <!-- Se actualizará dinámicamente con JavaScript -->
+                        <a href="login.html" class="iniciar-sesion" id="login-link">Iniciar sesión</a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <div class="link">
+                    <p class="texto-footer">© CalcoMania</p>
+                    <a href="https://www.instagram.com/calcoomaniaa/" target="_blank" class="icon-instagram">
+                        <img src="Resourse/instagram.png" alt="Instagram" style="width: 20px; height: 20px;"> 
+                        Instagram - CalcoMania
+                    </a>
+                </div>
+            </footer>
+        </aside>
+        <main>
+            <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!-- Esto se va a rellenar con JS -->
+            </div>
+        </main>
+    </div>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="menu.js"></script>
+</body>
+</html>

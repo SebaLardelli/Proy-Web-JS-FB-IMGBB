@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate en CalcoMania</title>
+    <link rel="icon" href="Resourse/icono.png">
+    <link rel="stylesheet" href="styleregistro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <div class="login-box">
+            <h2>Registro</h2>
+            <form action="">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input id="nombre"  type="text" required oninput="toggleFocus(this)">
+                    <label>Nombre</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input id="apellido" type="text"  required oninput="toggleFocus(this)">
+                    <label>Apellido</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input id="email" type="email"  required oninput="toggleFocus(this)">
+                    <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input id="contraseña" type="password"  required oninput="showPasswordToggle(this)">
+                    <span class="password-toggle" onclick="togglePasswordVisibility('contraseña')">
+                        <ion-icon id="contraseña-eye" name="eye-outline"></ion-icon>
+                        <ion-icon id="contraseña-eye-off" name="eye-off-outline" style="display: none;"></ion-icon>
+                    </span>
+                    <label>Contraseña</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input id="confirmar-contraseña" type="password" required oninput="showPasswordToggle(this)">
+                    <span class="password-toggle" onclick="togglePasswordVisibility('confirmar-contraseña')">
+                        <ion-icon id="confirmar-contraseña-eye" name="eye-outline"></ion-icon>
+                        <ion-icon id="confirmar-contraseña-eye-off" name="eye-off-outline" style="display: none;"></ion-icon>
+                    </span>
+                    <label>Repetir Contraseña</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                    <input id="fecha-nacimiento" type="date" required>
+                    <label for="fecha-nacimiento">Fecha de nacimiento</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+                    <input id="direccion" type="text" required oninput="toggleFocus(this)">
+                    <label>Dirección</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+                    <input id="localidad" type="text"  required oninput="toggleFocus(this)">
+                    <label>Localidad</label>
+                </div>
+
+                <button id="reg-btn"  type="submit">Registrarse</button>
+
+                <div class="register-link">
+                    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"
+            integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const dateInput = document.getElementById("fecha-nacimiento");
+    
+    dateInput.placeholder = " ";
+
+    dateInput.addEventListener("focus", function () {
+        dateInput.showPicker();
+      });
+
+    dateInput.addEventListener("input", function () {
+        toggleFocus(this);
+    });
+});
+
+function toggleFocus(input) {
+    if (input.value.trim() === "") {
+        input.classList.remove("has-content");
+    } else {
+        input.classList.add("has-content");
+    }
+}
+        function togglePasswordVisibility(fieldId) {
+    const passwordField = document.getElementById(fieldId);
+    const eyeIcon = document.getElementById(fieldId + "-eye");
+    const eyeOffIcon = document.getElementById(fieldId + "-eye-off");
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        eyeIcon.style.display = "none";
+        eyeOffIcon.style.display = "inline-block";
+    } else {
+        passwordField.type = "password";
+        eyeIcon.style.display = "inline-block";
+        eyeOffIcon.style.display = "none";
+    }
+}
+
+        function showPasswordToggle(inputElement) {
+            const passwordToggle = inputElement.nextElementSibling;
+            if (inputElement.value.trim() !== "") {
+                passwordToggle.style.display = "inline";
+                toggleFocus(inputElement);
+            } else {
+                passwordToggle.style.display = "none";
+                toggleFocus(inputElement);
+            }
+        }
+    </script>
+
+
+<script type="module" src="./registro.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
+
+
+
+

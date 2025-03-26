@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Código - CalcoMania</title>
+    <link rel="icon" href="Resourse/icono.png">
+    <link rel="stylesheet" href="stylecodigo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <div class="login-box">
+            <h2>Verificación</h2>
+            <p class="informativo">Ingresa el código de 6 dígitos enviado a tu correo electrónico.</p>
+            <form>
+                <div class="otp-inputs">
+                    <input id="otp1" type="text" maxlength="1" oninput="moveToNext(this, 'otp2')">
+                    <input id="otp2" type="text" maxlength="1" oninput="moveToNext(this, 'otp3')">
+                    <input id="otp3" type="text" maxlength="1" oninput="moveToNext(this, 'otp4')">
+                    <input id="otp4" type="text" maxlength="1" oninput="moveToNext(this, 'otp5')">
+                    <input id="otp5" type="text" maxlength="1" oninput="moveToNext(this, 'otp6')">
+                    <input id="otp6" type="text" maxlength="1">
+                </div>
+
+                <p id="codigo-aleatorio" class="codigo"></p>
+
+                <button type="submit">Verificar</button>
+            </form>
+        </div>
+    </section>
+
+    <script type="module" src="codigo.js"></script>
+
+    <script>
+        // Obtén el código de verificación de Local Storage
+        const codigo = localStorage.getItem("codigoVerificacion");
+        document.getElementById("codigo-aleatorio").textContent = codigo || "No se generó ningún código.";
+    </script>
+
+    <script>
+        function moveToNext(current, nextId) {
+            if (current.value.length === 1) {
+                document.getElementById(nextId).focus();
+            }
+        }
+    </script>
+</body>
+</html>
